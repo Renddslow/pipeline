@@ -4,18 +4,38 @@ backend:
   branch: main
 media_folder: static/img
 public_folder: /img
+site_url: https://pipeline.flatland.church
+logo_url: https://firebasestorage.googleapis.com/v0/b/flatland-api.appspot.com/o/icons%2Ficon-167x167.png?alt=media&token=81113e67-3e07-42ff-8f02-17f5e3aee3b6
 collections:
-  - name: "courses"
-    label: "Courses"
-    folder: "content/courses"
+  - name: 'courses'
+    label: 'Courses'
+    folder: 'content/courses'
     create: true
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-  - name: "programs"
-    label: "Programs"
-    folder: "content/programs"
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'content', widget: 'string' }
+      - {
+          label: 'Program',
+          name: 'program',
+          widget: 'relation',
+          collection: 'programs',
+          searchFields: ['title'],
+          valueField: 'id',
+          displayFields: ['title'],
+        }
+  - name: 'programs'
+    label: 'Programs'
+    folder: 'content/programs'
     create: true
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      - { label: 'Title', name: 'title', widget: 'string' }
+  - name: 'outcomes'
+    label: 'Outcomes'
+    folder: 'content/outcomes'
+    create: true
+    slug: '{{slug}}'
+    field:
+      - { label: 'ID', name: 'id', widget: 'string' }
+      - { label: 'Description', name: 'content', widget: 'markdown' }
