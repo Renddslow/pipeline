@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: Renddslow/pipeline
+  branch: main
+media_folder: static/img
+public_folder: /img
+collections:
+  - name: "courses"
+    label: "Courses"
+    folder: "content/courses"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+  - name: "programs"
+    label: "Programs"
+    folder: "content/programs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
