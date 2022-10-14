@@ -14,7 +14,7 @@ collections:
     slug: '{{slug}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'content', widget: 'string' }
+      - { label: 'Description', name: 'body', widget: 'string' }
       - {
           label: 'Program',
           name: 'program',
@@ -36,6 +36,6 @@ collections:
     folder: 'content/outcomes'
     create: true
     slug: '{{slug}}'
-    field:
+    fields:
       - { label: 'ID', name: 'id', widget: 'string' }
-      - { label: 'Description', name: 'content', widget: 'markdown' }
+      - { label: 'Description', name: 'body', widget: 'markdown' }
